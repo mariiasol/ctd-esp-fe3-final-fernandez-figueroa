@@ -5,10 +5,13 @@ import { ThemeProvider, useTheme } from './ThemeContext'; // Importa el contexto
 
 
 const Navbar = () => {
-  // const { theme, toggleTheme } = useTheme(); // Obtén el theme y la función toggleTheme del contexto
+  const { theme, toggleTheme } = useTheme(); // Obtén el theme y la función toggleTheme del contexto
+
+  const navClasses = `nav ${theme === 'dark' ? 'dark-theme':'light-theme' }`;
+ 
 
   return (
-    <nav>
+    <nav className={navClasses}>
       <ul>
         <li>
           <Link to="/">Inicio</Link>
@@ -20,7 +23,8 @@ const Navbar = () => {
           <Link to="/favoritos">Favoritos</Link>
         </li>
       </ul>
-      {/* <button onClick={toggleTheme}>Cambiar tema</button> Agrega el botón y llama a toggleTheme cuando se hace clic */}
+      <button onClick={toggleTheme}>Cambiar tema</button>
+       {/* Agrega el botón y llama a toggleTheme cuando se hace clic */}
     </nav>
   );
 };

@@ -7,10 +7,12 @@ import Contacto from "./Routes/Contact";
 import Favoritos from "./Routes/Favs";
 import Detail from "./Routes/Detail";
 import { FavoritesProvider } from "./Routes/FavoritesContext"; // Importa tu contexto de favoritos
+import { ThemeProvider } from "./Components/ThemeContext";
 
 function App() {
   return (
     <Router>
+      <ThemeProvider>
       <div className="App">
         <Navbar />
         <FavoritesProvider> {/* Envuelve tu aplicación con el contexto de favoritos */}
@@ -23,6 +25,7 @@ function App() {
         </FavoritesProvider> {/* Cierra el contexto de favoritos */}
         <Footer />
       </div>
+      </ThemeProvider>
     </Router>
   );
 }
