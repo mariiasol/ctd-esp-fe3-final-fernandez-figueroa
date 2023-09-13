@@ -1,28 +1,26 @@
-// Card.jsx
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import './Card.css';
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { useFavorites } from '../Routes/FavoritesContext'; 
+import "./Card.css";
 
 const Card = ({ name, username, id }) => {
-  // Estado para rastrear si la Card está en favoritos
   const [isFav, setIsFav] = useState(false);
+  const { addToFavorites, removeFromFavorites } = useFavorites(); // Usa useFavorites para obtener el contexto
 
   const addFav = () => {
-    // Cambiar el estado para indicar que la Card está en favoritos
     setIsFav(!isFav);
 
-    // Aquí iría la lógica para guardar la Card en el localStorage
-    // Puedes usar localStorage.setItem para guardar la información de la Card
     if (!isFav) {
-      localStorage.setItem(`favCard_${id}`, JSON.stringify({ name, username }));
+      // Agrega la tarjeta a favoritos
+      addToFavorites({ id, name, username }); // Usa addToFavorites en lugar de addFavorite
     } else {
-      // Si la Card ya estaba en favoritos, puedes eliminarla del localStorage
-      localStorage.removeItem(`favCard_${id}`);
+      // Remueve la tarjeta de favoritos
+      removeFromFavorites(id); // Usa removeFromFavorites en lugar de removeFavorite
     }
   };
 
   return (
-    <div className="card">
+    <div className={`card ${isFav ? "fav" : ""}`}>
       <Link to={`/dentist/${id}`}>
         <h3>{name}</h3>
         <p>Nombre: {username}</p>

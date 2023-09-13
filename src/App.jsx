@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from "./Components/Footer";
@@ -7,19 +6,21 @@ import Home from "./Routes/Home";
 import Contacto from "./Routes/Contact";
 import Favoritos from "./Routes/Favs";
 import Detail from "./Routes/Detail";
-
+import { FavoritesProvider } from "./Routes/FavoritesContext"; // Importa tu contexto de favoritos
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Routes> 
-          <Route path="/contacto" element={<Contacto />} /> 
-          <Route path="/favoritos" element={<Favoritos />} /> 
-          <Route path="/dentist/:id" element={<Detail />} />
-          <Route path="/" element={<Home />} /> 
-        </Routes>
+        <FavoritesProvider> {/* Envuelve tu aplicación con el contexto de favoritos */}
+          <Routes> 
+            <Route path="/contacto" element={<Contacto />} /> 
+            <Route path="/favoritos" element={<Favoritos />} /> 
+            <Route path="/dentist/:id" element={<Detail />} />
+            <Route path="/" element={<Home />} /> 
+          </Routes>
+        </FavoritesProvider> {/* Cierra el contexto de favoritos */}
         <Footer />
       </div>
     </Router>
