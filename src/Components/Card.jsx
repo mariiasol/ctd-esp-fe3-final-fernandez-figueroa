@@ -1,22 +1,33 @@
-import React from "react";
-
+import React, { useState } from "react";
 
 const Card = ({ name, username, id }) => {
+  // Estado para rastrear si la Card está en favoritos
+  const [isFav, setIsFav] = useState(false);
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-  }
+  const addFav = () => {
+    // Cambiar el estado para indicar que la Card está en favoritos
+    setIsFav(!isFav);
+
+    // Aquí iría la lógica para guardar la Card en el localStorage
+    // Puedes usar localStorage.setItem para guardar la información de la Card
+    if (!isFav) {
+      localStorage.setItem(`favCard_${id}`, JSON.stringify({ name, username }));
+    } else {
+      // Si la Card ya estaba en favoritos, puedes eliminarla del localStorage
+      localStorage.removeItem(`favCard_${id}`);
+    }
+  };
 
   return (
     <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
+      <h3>{name}</h3>
+      <p>Username: {username}</p>
 
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+      {/* Mostrar el botón "Add fav" o "Remove fav" según si la Card está en favoritos */}
+      <button onClick={addFav} className="favButton">
+        {isFav ? "Remove fav" : "Add fav"}
+      </button>
     </div>
   );
 };
-
 export default Card;
