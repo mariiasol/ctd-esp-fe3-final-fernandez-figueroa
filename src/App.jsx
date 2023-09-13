@@ -6,7 +6,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Routes/Home";
 import Contacto from "./Routes/Contact";
 import Favoritos from "./Routes/Favs";
-import Detalle from "./Routes/Detail";
+import Detail from "./Routes/Detail";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Routes> 
           <Route path="/contacto" element={<Contacto />} /> 
           <Route path="/favoritos" element={<Favoritos />} /> 
-          <Route path="/detalle/:id" element={<Detalle />} /> 
+          <Route path="/dentist/:id" element={<Detail />} />
           <Route path="/" element={<Home />} /> 
         </Routes>
         <Footer />

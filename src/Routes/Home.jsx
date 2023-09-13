@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Components/Card';
-import { getDentistsFromAPI } from './api';
 
 const Home = () => {
   const [dentists, setDentists] = useState([]);
 
   useEffect(() => {
-    // Llama a la función para obtener los dentistas desde la API
-    getDentistsFromAPI()
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
       .then(data => setDentists(data))
       .catch(error => console.error(error));
   }, []);
@@ -17,7 +16,7 @@ const Home = () => {
       <h1>Salud by Digital House</h1>
       <div className='card-grid'>
         {dentists.map(dentist => (
-          <Card key={dentist.id} dentist={dentist} />
+          <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id} />
         ))}
       </div>
     </main>

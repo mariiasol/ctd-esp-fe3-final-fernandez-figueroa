@@ -1,4 +1,7 @@
+// Card.jsx
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import './Card.css';
 
 const Card = ({ name, username, id }) => {
   // Estado para rastrear si la Card está en favoritos
@@ -20,14 +23,15 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className="card">
-      <h3>{name}</h3>
-      <p>Username: {username}</p>
-
-      {/* Mostrar el botón "Add fav" o "Remove fav" según si la Card está en favoritos */}
+      <Link to={`/dentist/${id}`}>
+        <h3>{name}</h3>
+        <p>Nombre: {username}</p>
+      </Link>
       <button onClick={addFav} className="favButton">
         {isFav ? "Remove fav" : "Add fav"}
       </button>
     </div>
   );
 };
+
 export default Card;

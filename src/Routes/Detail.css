@@ -1,0 +1,26 @@
+.detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* Fondo blanco de la web */
+  }
+  
+  .detail-box {
+    background-color: #696666; /* Fondo gris oscuro del rectángulo */
+    width: 50%; /* Ancho del rectángulo, puedes ajustarlo según tus necesidades */
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff; /* Letras en blanco */
+  }
+  
+  .detail-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-info {
+    text-align: left;
+    font-size: 20px;
+  }
