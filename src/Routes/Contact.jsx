@@ -1,16 +1,83 @@
-import React from 'react'
-import Form from '../Components/Form'
+import React, { useState } from 'react';
+import './Contact.css';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+const Contacto = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+  });
 
-const Contact = () => {
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (formData.fullName.length < 6) {
+      newErrors.fullName = 'El nombre completo debe tener al menos 6 caracteres';
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      newErrors.email = 'El formato del correo electrónico no es válido';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      const { fullName } = formData;
+      setSuccessMessage(`Gracias ${fullName}, te contactaremos cuanto antes vía email.`);
+    }
+  };
+
   return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
-      <Form/>
+    <div className="container">
+      <div className="form-container">
+        <h1>Contacto</h1>
+        <h2>Dejanos tus datos y te contactaremos</h2>
+        {successMessage ? (
+          <p className="success">{successMessage}</p>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Nombre Completo:</label>
+              <input
+                type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleInputChange}
+              />
+              <span className="error">{errors.fullName}</span>
+            </div>
+            <div>
+              <label>Email:</label>
+              <input
+                type="text"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+              <span className="error">{errors.email}</span>
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contacto;
