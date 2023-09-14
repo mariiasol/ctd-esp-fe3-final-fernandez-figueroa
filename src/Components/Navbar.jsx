@@ -7,19 +7,19 @@ import { ThemeProvider, useTheme } from './ThemeContext'; // Importa el contexto
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme(); // Obtén el theme y la función toggleTheme del contexto
 
-  const navClasses = `nav ${theme === 'dark' ? 'dark-theme':'light-theme' }`;
- 
+  const navClasses = `nav ${theme === 'dark' ? 'dark-theme':'' }`;
+  
 
   return (
     <nav className={navClasses}>
       <ul>
-        <li>
+        <li >
           <Link to="/">Inicio</Link>
         </li>
-        <li>
+        <li >
           <Link to="/contacto">Contacto</Link>
         </li>
-        <li>
+        <li >
           <Link to="/favoritos">Favoritos</Link>
         </li>
       </ul>
