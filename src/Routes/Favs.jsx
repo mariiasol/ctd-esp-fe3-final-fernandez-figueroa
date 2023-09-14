@@ -2,24 +2,32 @@ import React, { useContext } from "react";
 import Card from "../Components/Card";
 import { useFavorites } from './FavoritesContext';
 
-
-  function FavoritesContext() {
-    const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+function FavoritesContext() {
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const estiloParrafo = {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginBottom: '350px',
+  };
   return (
     <>
       <h1>Dentistas Favoritos</h1>
-      <div className="card-grid">
-        {favorites.map((dentist) => (
-          <Card
-            key={dentist.id}
-            name={dentist.name}
-            username={dentist.username}
-            id={dentist.id}
-          />
-        ))}
-      </div>
+      {favorites.length === 0 ? (
+         <p style={estiloParrafo}>No hay ningun medico seleccionado como favorito</p>
+      ) : (
+        <div className="card-grid">
+          {favorites.map((dentist) => (
+            <Card
+              key={dentist.id}
+              name={dentist.name}
+              username={dentist.username}
+              id={dentist.id}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
-};
+}
 
 export default FavoritesContext;
