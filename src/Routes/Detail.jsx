@@ -17,7 +17,6 @@ const Detail = () => {
   }, [id]);
 
   useEffect(() => {
-    // Verifica si el dentista actual está en favoritos
     setIsFav(favorites.some(fav => fav.id === id));
   }, [favorites, id]);
 
