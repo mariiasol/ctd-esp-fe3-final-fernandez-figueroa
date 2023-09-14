@@ -7,7 +7,7 @@ import { useFavorites } from './FavoritesContext';
     const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
   return (
     <>
-      <h1>Dentists Favs</h1>
+      <h1>Dentistas Favoritos</h1>
       <div className="card-grid">
         {favorites.map((dentist) => (
           <Card
