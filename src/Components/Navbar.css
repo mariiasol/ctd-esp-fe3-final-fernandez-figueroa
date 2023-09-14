@@ -1,34 +1,33 @@
-
-
 nav {
-  background-color: #333; 
-  color: #fff; 
-  padding: 10px; 
-  width: 100%; 
+  background-color: #333;
+  color: #fff;
+  padding: 18px;
+  width: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: space-between; /* Cambio a justify-content: space-between */
+  align-items: center; /* Para centrar verticalmente el botón */
+
 }
 
 ul {
-  list-style: none; 
-  padding: 0;
+  list-style: none;
+  padding: 10;
   display: flex;
-  justify-content: space-between; 
-  max-width: 600px; 
-  width: 100%; 
+  max-width: 600px;
+  width: 100%;
 }
 
 li {
-  margin-right: 20px; 
+  margin-right: 20px;
 }
 
 a {
-  text-decoration: none; 
-  color: #fff; 
+  text-decoration: none;
+  color: #fff;
 }
 
 a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 .light-theme {
@@ -36,9 +35,24 @@ a:hover {
   color: #000000;
 }
 
-
 .dark-theme {
   background-color: #000000;
   color: #ffffff;
 }
 
+/* Estilos para el botón de cambio de tema */
+button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  padding: 0;
+  margin: 0;
+  margin-right: 20px; /* Espacio a la derecha para separar del último enlace */
+}
+
+button:hover {
+  color: #ffcc00;
+}
