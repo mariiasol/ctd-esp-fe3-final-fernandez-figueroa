@@ -1,35 +1,34 @@
 
-/* Navbar.css */
 
 nav {
-  background-color: #333; /* Color de fondo del navbar */
-  color: #fff; /* Color del texto */
-  padding: 10px; /* Espaciado interno */
-  width: 100%; /* Extender el navbar al 100% del ancho de la pantalla */
+  background-color: #333; 
+  color: #fff; 
+  padding: 10px; 
+  width: 100%; 
   display: flex;
-  justify-content: center; /* Centrar elementos horizontalmente */
+  justify-content: center; 
 }
 
 ul {
-  list-style: none; /* Elimina los marcadores de lista */
+  list-style: none; 
   padding: 0;
   display: flex;
-  justify-content: space-between; /* Espaciar elementos entre sí */
-  max-width: 600px; /* Establecer un ancho máximo para el contenido */
-  width: 100%; /* Extender la lista al 100% del ancho del contenedor */
+  justify-content: space-between; 
+  max-width: 600px; 
+  width: 100%; 
 }
 
 li {
-  margin-right: 20px; /* Espacio entre elementos de lista */
+  margin-right: 20px; 
 }
 
 a {
-  text-decoration: none; /* Elimina subrayados de enlaces */
-  color: #fff; /* Color del texto de los enlaces */
+  text-decoration: none; 
+  color: #fff; 
 }
 
 a:hover {
-  text-decoration: underline; /* Subraya enlaces al pasar el mouse */
+  text-decoration: underline; 
 }
 
 .light-theme {
@@ -37,7 +36,7 @@ a:hover {
   color: #000000;
 }
 
-/* Clases para el tema oscuro */
+
 .dark-theme {
   background-color: #000000;
   color: #ffffff;

@@ -1,17 +1,17 @@
 .card {
-    background-color: #cfcdcd; /* Fondo blanco */
-    width: 200px; /* Ancho de la tarjeta */
+    background-color: #cfcdcd; 
+    width: 200px; 
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    color: #030303; /* Letras en gris oscuro */
+    color: #030303; 
     margin-top: 4%;
 
   }
   
   .card:hover {
-    transform: scale(1.05); /* Agrandar la tarjeta en un 5% al pasar el cursor */
-    transition: transform 0.2s ease-in-out; /* Mover la transición aquí para que no afecte la visibilidad */
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out; 
   }
   
   .card h3 {
@@ -23,23 +23,23 @@
     font-size: 14px;
     color:black;
   }
-  /* Estilo para el botón "Añadir a favoritos" */
+  
 .favButton {
-    background-color: rgb(148, 137, 137); /* Fondo negro */
-    color: white; /* Letras en blanco */
-    border: none; /* Elimina el borde */
-    padding: 10px 20px; /* Ajusta el espaciado interno */
-    border-radius: 5px; /* Borde redondeado */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    margin-top: 10px; /* Margen superior para separar del contenido */
-    display: block; /* Hace que el botón sea un bloque para centrarlo */
-    margin: 0 auto; /* Centra horizontalmente */
-    text-align: center; /* Centra el texto dentro del botón */
-    width: 150px; /* Ancho del botón */
+    background-color: rgb(148, 137, 137); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 10px; 
+    display: block; 
+    margin: 0 auto; 
+    text-align: center; 
+    width: 150px; 
   }
   
-  /* Estilo para el botón cuando se pasa el cursor por encima */
+  
   .favButton:hover {
-    background-color: #333; /* Cambia el color de fondo al pasar el cursor */
-    color: white; /* Mantiene las letras en blanco */
+    background-color: #333; 
+    color: white; 
   }

@@ -11,12 +11,12 @@
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-    width: 90%; /* Aumenta el ancho del contenedor */
-    max-width: 500px; /* Establece un ancho máximo */
-    margin: auto; /* Centra horizontalmente */
+    width: 90%; 
+    max-width: 500px; 
+    margin: auto; 
   }
   
-  /* Estilos para errores y éxito */
+  
   .error {
     color: red;
   }
@@ -26,26 +26,26 @@
   }
   
   .form-container h1, .form-container h2 {
-    margin-bottom: 30px; /* Reduzco el espacio entre los títulos y el formulario */
+    margin-bottom: 30px; 
   }
   
   .form-container h2 {
-    margin-bottom: 180px; /* Agrega espacio entre el subtitulo 2 y los campos a rellenar */
+    margin-bottom: 180px; 
   }
   
   .form-container label {
-    display: block; /* Coloca los labels en bloques para alinearlos correctamente */
-    text-align: left; /* Alinea el texto a la izquierda */
-    margin-bottom: 10px; /* Agrega espacio entre los labels y los inputs */
+    display: block; 
+    text-align: left; 
+    margin-bottom: 10px; 
   }
   
   .form-container input {
-    width: 100%; /* Los inputs ocuparán todo el ancho disponible */
-    padding: 8px; /* Espaciado interno */
-    margin-bottom: 10px; /* Agrega espacio entre los inputs */
+    width: 100%; 
+    padding: 8px; 
+    margin-bottom: 10px; 
   }
   
-  /* Estilo para el botón de enviar */
+  
   .form-container button {
     background-color: black;
     color: white;
@@ -57,7 +57,7 @@
     margin-bottom: 40%;
   }
   
-  /* Estilo para el botón de enviar al pasar el cursor */
+  
   .form-container button:hover {
-    background-color: #333; /* Cambia el color al pasar el cursor */
+    background-color: #333; 
   }

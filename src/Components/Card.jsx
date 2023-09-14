@@ -5,17 +5,17 @@ import "./Card.css";
 
 const Card = ({ name, username, id }) => {
   const [isFav, setIsFav] = useState(false);
-  const { addToFavorites, removeFromFavorites } = useFavorites(); // Usa useFavorites para obtener el contexto
+  const { addToFavorites, removeFromFavorites } = useFavorites(); 
 
   const addFav = () => {
     setIsFav(!isFav);
 
     if (!isFav) {
-      // Agrega la tarjeta a favoritos
-      addToFavorites({ id, name, username }); // Usa addToFavorites en lugar de addFavorite
+      
+      addToFavorites({ id, name, username }); 
     } else {
-      // Remueve la tarjeta de favoritos
-      removeFromFavorites(id); // Usa removeFromFavorites en lugar de removeFavorite
+      
+      removeFromFavorites(id); 
     }
   };
 

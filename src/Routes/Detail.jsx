@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './Detail.css'; // Archivo de estilos CSS para Detail
+import './Detail.css'; 
 
 const Detail = () => {
-  // Obtiene el parámetro dinámico 'id' de la URL
+  
   const { id } = useParams();
   const [dentist, setDentist] = useState(null);
 
   useEffect(() => {
-    // Realiza una llamada a la API para obtener los detalles del médico por 'id'
+    
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => response.json())
       .then(data => setDentist(data))
