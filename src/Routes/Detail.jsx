@@ -19,10 +19,13 @@ const Detail = () => {
     return <div>Loading...</div>;
   }
 
+  const imageUrl = `/images/${id}.jpg`; 
+
   return (
     <div className="detail-container">
       <div className="detail-box">
         <h1 className="detail-title">Detalle {dentist.name}</h1>
+        <img src={imageUrl} alt={dentist.name} className="detail-image" />
         <div className="detail-info">
           <p><strong>Nombre:</strong> {dentist.name}</p>
           <p><strong>Email:</strong> {dentist.email}</p>

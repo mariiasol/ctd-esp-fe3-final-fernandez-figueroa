@@ -13,7 +13,12 @@
     transform: scale(1.05); 
     transition: transform 0.2s ease-in-out; 
   }
-  
+  .card-img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+  }
   .card h3 {
     font-size: 17px;
     color:black;
