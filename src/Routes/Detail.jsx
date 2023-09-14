@@ -1,25 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Detail.css'; 
+import { useFavorites } from '../Routes/FavoritesContext';
 
 const Detail = () => {
-  
   const { id } = useParams();
   const [dentist, setDentist] = useState(null);
+  const { addToFavorites, removeFromFavorites, favorites } = useFavorites(); // Obtiene el contexto de favoritos
+  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-    
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => response.json())
       .then(data => setDentist(data))
       .catch(error => console.error(error));
   }, [id]);
 
+  useEffect(() => {
+    // Verifica si el dentista actual está en favoritos
+    setIsFav(favorites.some(fav => fav.id === id));
+  }, [favorites, id]);
+
+  const imageUrl = `/images/${id}.jpg`;
+
+  const handleFavClick = () => {
+    if (isFav) {
+      removeFromFavorites(id);
+      setIsFav(false);
+    } else {
+      addToFavorites({ id, name: dentist.name, username: dentist.username });
+      setIsFav(true);
+    }
+  };
+
   if (!dentist) {
     return <div>Loading...</div>;
   }
-
-  const imageUrl = `/images/${id}.jpg`; 
 
   return (
     <div className="detail-container">
@@ -32,9 +48,12 @@ const Detail = () => {
           <p><strong>Teléfono:</strong> {dentist.phone}</p>
           <p><strong>Website:</strong> {dentist.website}</p>
         </div>
+        <button onClick={handleFavClick} className="favButton">
+          {isFav ? "Remove fav" : "Add fav"}
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Detail;
